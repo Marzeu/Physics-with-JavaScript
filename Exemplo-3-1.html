@@ -1,0 +1,13 @@
+<script>
+    var x = parseFloat(prompt("Entre com um número entre 0 e 1: "));
+    var y = parseFloat(prompt("Entre com outro número entre 0 e 1: "));
+    var r = Math.sqrt(x * x + y * y);
+    if (r < 1) {
+        var msg = "O ponto (" + x + "," + y + ") está DENTRO do círculo";
+        alert(msg);
+    }
+    else {
+        var msg = "O ponto (" + x + "," + y + ") está FORA do círculo";
+        alert(msg);
+    }
+</script>

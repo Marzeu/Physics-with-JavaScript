@@ -1,0 +1,18 @@
+<script>
+    var angulo = parseFloat(prompt("Ângulo?", "30"));
+    var str = "";
+    if (isNaN(angulo)) {
+        str += "Sinto muito, número inválido!";
+    }
+    else {
+        var ok = confirm(angulo + " graus. Tem certeza?");
+        if (ok) {
+            str += "o seno de " + angulo + " é ";
+            str += Math.sin(angulo * Math.PI / 180).toFixed(2);
+        }
+        else {
+            str += "Até a próxima";
+        }
+    }
+    alert(str);
+</script>

@@ -1,0 +1,21 @@
+<script>
+    var num = Math.random();
+    if (num < 0.25) {
+        quad = "PRIMEIRO";
+    }
+    else {
+        if (num < 0.5) {
+            quad = "SEGUNDO";
+        }
+        else {
+            if (num < 0.75) {
+                quad = "TERCEIRO";
+            }
+            else {
+                quad = "QUARTO";
+            }
+        }
+    }
+    var x = parseFloat(prompt("Digite x no " + quad + " quadrante: "));
+    var y = parseFloat(prompt("Digite y no " + quad + " quadrante: "));
+</script>
