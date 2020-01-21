@@ -1,0 +1,45 @@
+<script>
+
+
+    var ncol = 16;
+    var nlin = 16;
+    var str = "";
+    str += "<table alin='center' border='0' ";
+    str += "       cellpadding='0' cellspacing='0'";
+    str += "       style='font-size:8pt;line-height:18pt'>";
+    str += "<colgroup span='" + (ncol + 1) + "' width='30'>";
+    str += "<tr>";
+    str += "<th style='background-color:#dddddd'>x</th>";
+    for (var j = 0; j < ncol; j++) {
+        str += "<th align='center' style='background-color:#dddddd'>";
+        str += j + "</th>";
+    }
+    str += "</tr>";
+
+
+    for (var i = 0; i < nlin; i++) {
+        str += "<tr>";
+        str += "<th align='center' style='background-color:#dddddd'>";
+        str += i + "</th>";
+        for (var j = 0; j < ncol; j++) {
+
+            
+    function RGB(r, g, b) {
+        return ("#" + toHex(r) + toHex(g) + toHex(b));
+    }
+            var r = i * i;
+            var g = j * j;
+            var b = 0;
+            
+
+            str += "<td align='center' valign='center'";
+            str += "    style='background-color:" + RGB(r, g, b) + "'";
+            str += "> </td>";
+        }
+        str += "</tr>";
+    }
+    str += "</table>";
+
+    document.write(str);
+
+</script>
