@@ -1,0 +1,110 @@
+<script>
+    function DATARAND() {
+        this.theta = new Array();
+        this.prob = new Array();
+        with (this) {
+            theta[0] = 0; prob[0] = 14.39;
+            theta[1] = 6; prob[1] = 14.03;
+            theta[2] = 12; prob[2] = 13.24;
+            theta[3] = 18; prob[3] = 11.75;
+            theta[4] = 24; prob[4] = 9.71;
+            theta[5] = 30; prob[5] = 7.60;
+            theta[6] = 36; prob[6] = 5.95;
+            theta[7] = 42; prob[7] = 5.13;
+            theta[8] = 48; prob[8] = 5.10;
+            theta[9] = 54; prob[9] = 5.48;
+            theta[10] = 60; prob[10] = 5.69;
+            theta[11] = 66; prob[11] = 5.31;
+            theta[12] = 72; prob[12] = 4.25;
+            theta[13] = 78; prob[13] = 2.82;
+            theta[14] = 84; prob[14] = 1.55;
+            theta[15] = 90; prob[15] = 0.95;
+            theta[16] = 96; prob[16] = 1.20;
+            theta[17] = 102; prob[17] = 2.12;
+            theta[18] = 108; prob[18] = 3.19;
+            theta[19] = 114; prob[19] = 3.90;
+            theta[20] = 120; prob[20] = 3.92;
+            theta[21] = 126; prob[21] = 3.35;
+            theta[22] = 132; prob[22] = 2.63;
+            theta[23] = 138; prob[23] = 2.30;
+            theta[24] = 144; prob[24] = 2.77;
+            theta[25] = 150; prob[25] = 4.06;
+            theta[26] = 156; prob[26] = 5.82;
+            theta[27] = 162; prob[27] = 7.51;
+            theta[28] = 168; prob[28] = 8.64;
+            theta[29] = 174; prob[29] = 9.09;
+            for (i in prob) prob[i] = prob[i] / 1000;
+        }
+        this.dtheta = this.theta[1] - this.theta[0];
+        var totint = 0;
+        this.integral = new Array(this.theta.length + 1);
+        this.integral[0] = 0;
+        for (var i = 1; i < this.integral.length; i++) {
+            totint += this.prob[i - 1] * this.dtheta;
+            this.integral[i] = totint;
+        }
+        for (var i = 0; i < this.prob.length; i++)
+            this.prob[i] /= totint;
+        for (var i = 0; i < this.integral.length; i++)
+            this.integral[i] /= totint;
+    }
+
+    DATARAND.prototype.random = function () {
+        var x = Math.random();
+        with (this)
+        for (var i = 1; i < integral.length; i++)
+            if ((x >= integral[i - 1]) && (x < integral[i]))
+                return theta[i - 1] + (x - integral[i - 1]) *
+                    dtheta / (integral[i] - integral[i - 1]);
+    }
+
+    var xmin = 0;
+    var xmax = 180;
+    var ncan = 30;
+    var dx = (xmax - xmin) / ncan;
+    var dist = new Array(ncan);
+    for (i = 0; i < ncan; i++) dist[i] = 0;
+
+    var dRand = new DATARAND();
+
+    var npts = 10000;
+    var x;
+    for (var i = 0; i < npts; i++) {
+        x = dRand.random();
+        for (var n = 0; n < ncan; n++) {
+            if ((x > (xmin + n * dx)) && (x < (xmin + (n + 1) * dx))) {
+                dist[n]++;
+                break
+            }
+        }
+    }
+
+    var label = new Array(ncan);
+    var maxlength = 0;
+    for (i = 0; i < ncan; i++) {
+        label[i] = (xmin + i * dx).toFixed(1);
+        if (label[i].length > maxlength) maxlength = label[i].length;
+    }
+
+    var max = 0;
+    for (n = 0; n < ncan; n++)
+        if (dist[n] > max) max = dist[n];
+    var dy = max / 50;
+
+    document.write("<pre style='font-size:8pt'>");
+
+    for (i = 0; i < ncan; i++) {
+        var nast = Math.round(dist[i] / dy);
+        var str = "";
+
+        for (j = 0; j < (maxlength - label[i].length); j++) str += " ";
+        str += label[i] + "  ";
+        for (n = 0; n < nast; n++) str += "*";
+        str += " " + dist[i] + "<br>";
+        document.write(str);
+    }
+
+    document.write("</pre>");
+
+
+</script>
