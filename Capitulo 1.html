@@ -1,40 +1,84 @@
-<script>
-    document.write("Meu primeiro script");
-</script>
-<br>
-<br>
-<script>
-    var a = 2;
-    var b = 3;
-    var c = a + b;
-    document.write("A soma de " + a + " com " + b + " resulta em " + c);
-</script>
-<br>
-<br>
-<script>
-    var a = Math.PI;
-    var b = Math.E;
-    var c = Math.log(a) / Math.sin(b);
-    document.write("log(" + a + ")/sin(" + b + ")= " + c);
-</script>
-<br>
-<br>
-<script>
-    var x = 2;
-    document.write("sin(" + x + ") = " + Math.sin(x) + "<br>");
-    document.write("cos(" + x + ") = " + Math.cos(x) + "<br>");
-    document.write("tan(" + x + ") = " + Math.tan(x) + "<br>");
-    document.write("raiz(" + x + ") = " + Math.sqrt(x) + "<br>");
-    document.write("ln(" + x + ") = " + Math.log(x) + "<br>");    
-</script>
-<br>
-<br>
-<script>
-    var y = Math.sqrt(2);
-    document.write(y.toFixed(0) + "<br>");
-    document.write(y.toFixed(2) + "<br>");
-    document.write(y.toFixed(4) + "<br>");
-    document.write(y.toPrecision(1) + "<br>");
-    document.write(y.toPrecision(2) + "<br>");
-    document.write(y.toPrecision(4) + "<br>");    
-</script>
+<html>
+
+<body>
+
+    <script>
+        //exemplo-1-1
+        document.write("Meu primeiro script");
+    </script>
+    <br>
+    <br>
+    <script>
+        //exemplo-1-2
+        var a = 2;
+        var b = 3;
+        var c = a + b;
+        document.write("A soma de " + a + " com " + b + " resulta em " + c);
+    </script>
+    <br>
+    <br>
+    <script>
+        //exemplo-1-3
+        var a = Math.PI;
+        var b = Math.E;
+        var c = Math.log(a) / Math.sin(b);
+        document.write("log(" + a + ")/sin(" + b + ")= " + c);
+    </script>
+    <br>
+    <br>
+    <script>
+        //exemplo-1-4
+        var x = 2;
+        document.write("sin(" + x + ") = " + Math.sin(x) + "<br>");
+        document.write("cos(" + x + ") = " + Math.cos(x) + "<br>");
+        document.write("tan(" + x + ") = " + Math.tan(x) + "<br>");
+        document.write("raiz(" + x + ") = " + Math.sqrt(x) + "<br>");
+        document.write("ln(" + x + ") = " + Math.log(x) + "<br>");    
+    </script>
+    <br>
+    <br>
+    <script>
+        //exemplo-1-5
+        var y = Math.sqrt(2);
+        document.write(y.toFixed(0) + "<br>");
+        document.write(y.toFixed(2) + "<br>");
+        document.write(y.toFixed(4) + "<br>");
+        document.write(y.toPrecision(1) + "<br>");
+        document.write(y.toPrecision(2) + "<br>");
+        document.write(y.toPrecision(4) + "<br>");    
+    </script>
+    <br>
+    <br>
+    <script>
+        //exemplo-1-6
+        var z = 100;
+        document.write(z.toFixed(0) + "<br>");
+        document.write(z.toFixed(2) + "<br>");
+        document.write(z.toFixed(4) + "<br>");
+        document.write(z.toPrecision(1) + "<br>");
+        document.write(z.toPrecision(2) + "<br>");
+        document.write(z.toPrecision(3) + "<br>");
+    </script>
+    <br>
+    <br>
+    <script>
+        //exemplo-1-7
+        //Equação de Torricelli, utilizada para calcular a velocidade inicial, da aceleração e da distância percorrida pelo objeto
+        var vo = 0;
+        var a = 9.8;
+        var Dx = 10;
+        var v = Math.sqrt(vo * vo + 2 * a * Dx);
+        document.write("<i>v</i> = " + v.toFixed(2) + " m/s <br>");
+
+        /*
+        Lei de Coulomb, utilizada para calcular a força entre duas cargas elétricas q1 e q2 separadas de uma distância d
+        */
+        var q1 = -1.6e-19;
+        var q2 = +1.6e-19;
+        var d = 1e-9;
+        var F = 8.99e9 * q1 * q2 / Math.pow(d, 2);
+        document.write("<i>F</i> = " + F.toPrecision(3) + " N <br>");
+    </script>
+</body>
+
+</html>
