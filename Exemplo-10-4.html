@@ -1,0 +1,38 @@
+<html>
+
+<body>
+    <script>
+        function toHex(n) {
+            var hex;
+            if (n < 0) hex = "00";
+            else if (n < 16) hex = "0" + n.toString(16);
+            else if (n > 255) hex = "ff";
+            else hex = n.toString(16);
+            return hex;
+        }
+
+        function RGB(r, g, b) {
+            return ("#" + toHex(r) + toHex(g) + toHex(b));
+        }
+
+        var str = "<table cellspacing='0' cellpadding='3' align='center'>";
+        str += "<tr>"
+        for (var i = 0; i < 6; i++) {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            var cor = RGB(r, g, b);
+            str += "<td align='center' width='100'";
+            str += "style='background-color:" + cor + "'>";
+            str += r + "," + g + "," + b + "<br>";
+            str += cor;
+            str += "</td>";
+        }
+        str += "</tr>";
+        str += "</table>";
+        document.write(str);
+
+    </script>
+</body>
+
+</html>

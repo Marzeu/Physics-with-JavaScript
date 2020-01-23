@@ -1,0 +1,13 @@
+<script>
+function geraCor() { 
+    var R = parseInt(255 * Math.random()); 
+    var G = parseInt(255 * Math.random()); 
+    var B = parseInt(255 * Math.random()); 
+    var cor = "rgb(" + R + "," + G + "," + B + ")"; 
+    return cor; 
+    } 
+    var estilo = "style='background-color:" + geraCor() + "'";
+
+    var str = "<p " + estilo + ">&nbsp;</p>"; 
+    document.write(str);
+    </script>

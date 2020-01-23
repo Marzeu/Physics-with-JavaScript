@@ -1,0 +1,42 @@
+<div id="onda"></div>
+<script>
+    function zCor(z) {
+        var z1 = -100;
+        var z2 = +100;
+        var zm = (z1 + z2) / 2;
+        var r = 0;
+        var g = 0;
+        var b = 0;
+        if (z <= zm) r = parseInt(255 * Math.cos((z - z1) / (zm - z1) * Math.PI / 2));
+        g = parseInt(255 * Math.sin((z - z1) / (z2 - z1) * Math.PI));
+        if (z >= zm) b = parseInt(255 * Math.sin((z - zm) / (z2 - zm) * Math.PI / 2));
+        return "rgb(" + r + "," + g + "," + b + ")";
+    }
+    function tabela() {
+        tempo = tempo + 0.01;
+        var str = "";
+        str += "<p>";
+        str += "<table style='font-size: 1pt; line-height: 1pt'";
+        str += "        border='0' cellpadding='1' cellspacing='0'";
+        str += "        align='center'>";
+        for (x = 0; x <= 1; x = x + 0.02) {
+            str += "<tr>";
+            for (y = 0; y <= 1; y = y + 0.02) {
+                var r = Math.sqrt(x * x + y * y);
+                // linha abaixo foi modificada
+                var z = 50 * Math.cos(4 * Math.PI * (r - 2.5 * tempo)) / Math.sqrt(r);
+                if (z > 100) z = 100;
+                else if (z < -100) z = -100;
+                str += "<td style='background-color:" + zCor(z) + "'>";
+                str += "&nbsp;&nbsp;" + "</td>";
+            }
+            str += "</tr>";
+        }
+        str += "</table>";
+        str += "</p>";
+        document.getElementById("onda").innerHTML = str;
+        if (tempo > 0.5) clearInterval(tabInterval);
+    }
+    var tempo = 0;
+    var tabInterval = setInterval("tabela()", 50);
+</script>
