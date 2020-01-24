@@ -1,0 +1,21 @@
+<html>
+
+<body>
+    <script>
+        //Script para calcula o campo elétrico de uma carga em um ponto do espaço:
+        var k = 8.99e9;
+        var q = 1.602e-19;
+        var x = 1.00e-9;
+        var y = 2.00e-9;
+        var z = 3.00e-9;
+        var r = x * x + y * y + z * z;
+        var Ex = (k * q * x) / Math.pow(r, 3 / 2);
+        var Ey = (k * q * y) / Math.pow(r, 3 / 2);
+        var Ez = (k * q * z) / Math.pow(r, 3 / 2);
+        document.write("<i>E<sub>x</sub></i> = " + Ex.toPrecision(3) + " N/C <br>");
+        document.write("<i>E<sub>y</sub></i> = " + Ey.toPrecision(3) + " N/C <br>");
+        document.write("<i>E<sub>z</sub></i> = " + Ez.toPrecision(3) + " N/C <br>");
+    </script>
+</body>
+
+</html>

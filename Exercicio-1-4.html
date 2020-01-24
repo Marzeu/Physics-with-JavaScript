@@ -1,0 +1,17 @@
+<html>
+
+<body>
+    <script>
+        //Script para calcula a distribuição normal ou gaussiana.
+        var A = 10;
+        var xo = 5.0;
+        var sigma = xo / 4;
+        var x = 2.5;
+        var dx = (x - xo);
+        var arg = (dx * dx) / (2 * sigma * sigma);
+        var g = A * Math.exp(-arg);
+        document.write("<i>g</i> = " + g.toPrecision(2) + " <br>");
+    </script>
+</body>
+
+</html>

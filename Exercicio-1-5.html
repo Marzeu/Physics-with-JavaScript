@@ -1,0 +1,16 @@
+<html>
+
+<body>
+    <script>
+        //Script para calcular a função de onda do estado fundamental de átomos com um elétron:
+        var Z = 2;
+        var ao = 5e-11;
+        var r = 2 * ao;
+        var Psi = Math.pow(1 / Math.PI, 1 / 2) * Math.pow(Z / ao, 3 / 2) * Math.exp(-Z * r / ao);
+        document.write("&Psi; = " + Psi.toPrecision(1) + " m<sup>-3/2</sup> <br>");
+    </script>
+
+
+</body>
+
+</html>
