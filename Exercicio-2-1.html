@@ -1,0 +1,25 @@
+<html>
+
+<body>
+    <script>
+        //Script para converter ângulos de radianos para graus.
+        var angulo = parseFloat(prompt("Digite o valor do ângulo em radianos que você deseja converter para graus"));
+        var str = "";
+        if (isNaN(angulo)) {
+            str += "Sinto muito, valor inválido!";
+        }
+        else {
+            var ok = confirm(angulo + " radianos. Tem certeza?");
+            if (ok) {
+                str += "O valor de " + angulo + " radianos em graus é ";
+                str += (angulo * 180 / Math.PI).toFixed(2);
+            }
+            else {
+                str += "Até a próxima!";
+            }
+        }
+        alert(str);
+    </script>
+</body>
+
+</html>

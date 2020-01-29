@@ -1,0 +1,25 @@
+<html>
+
+<body>
+    <script>
+        //Script para converter temperatura em graus centígrados para kelvin.
+        var temperatura = parseFloat(prompt("Digite o valor da temperatura em graus Celsius que você deseja converter para kelvin"));
+        var str = "";
+        if (isNaN(temperatura)) {
+            str += "Sinto muito, valor inválido!";
+        }
+        else {
+            var ok = confirm(temperatura + " Celsius. Tem certeza?");
+            if (ok) {
+                str += "O valor de " + temperatura + " Celsius em kelvin é ";
+                str += (temperatura + 273).toFixed(2);
+            }
+            else {
+                str += "Até a próxima!";
+            }
+        }
+        alert(str);
+    </script>
+</body>
+
+</html>
