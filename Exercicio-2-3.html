@@ -2,8 +2,36 @@
 
 <body>
     <script>
-    //Script que pergunta ao usuário se deseja converter graus centígrados para kelvin ou vice-versa e, em função da resposta, apresenta caixas de diálogo que permitam a entrada de dados e a apresentação dos resultados.
-
+        //Script que pergunta ao usuário se deseja converter graus centígrados para kelvin ou vice-versa e, em função da resposta, apresenta caixas de diálogo que permitam a entrada de dados e a apresentação dos resultados.
+        var str = "";
+        var entrada = parseFloat(prompt("Digite: 1 para converter graus Celsius para Kelvin e 2 para converter de Kelvin para Celsius"));
+        if (isNaN(entrada)) {
+            str += "Sinto muito, número inválido!0";
+        }
+        else {
+            if (entrada == 1) {
+                var TemperaturaCelsius = parseFloat(prompt("Qual valor você gostaria de converter para Kelvin?"));
+                if (isNaN(entrada)) {
+                    str += "Sinto muito, número inválido!1";
+                }
+                else {
+                    str += (TemperaturaCelsius + 273).toFixed(2);
+                }
+            }
+            if (entrada == 2) {
+                var TemperaturaKelvin = parseFloat(prompt("Qual valor você gostaria de converter para Celsius?"));
+                if (isNaN(entrada)) {
+                    str += "Sinto muito, número inválido!2";
+                }
+                else {
+                    str += (TemperaturaKelvin - 273).toFixed(2);
+                }
+            }
+            else ((entrada > 2) && (entrada < 1)) 
+                str += "Sinto muito, número inválido!3";
+            }
+        
+        alert(str);
     </script>
 </body>
 
